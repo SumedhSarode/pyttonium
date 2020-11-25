@@ -1,0 +1,26 @@
+team="ipl"
+player="dhoni"
+money=200000000
+score=200
+game="t20"
+print("I like {} player he plays in {} with amount of {} with this money he scores {} in the game{}".format(team,
+
+name="satish"
+id=12345
+dept="electrical"
+shift="7:30"
+
+print("Company employee name {},working in {} dept of {} id will come in shift of {}".format(name,id,dept,shift))
+
+song="mindblock"
+actor="mahesh"
+likes=1200000
+dancer="rashimika"
+
+print("Actor {} song called {} has {} likes dancer {} is good".format(actor,song,likes,dancer))
+
+
+
+
+
+

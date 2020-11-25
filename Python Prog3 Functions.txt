@@ -1,0 +1,98 @@
+def f1(**k):
+    print("player info ",end=":\n")
+
+    for key,value in k.items():
+       print(key,"is" ,value)
+
+f1(name ="Ajay",sal=10000)
+f1(name="Amit",sal=20000)
+f1(name ="Arun",sal=60000)
+
+UNpacking functions and arguments
+def print_it(a,b,c,d,e,f):
+    print(a,b,c,d,e,f)
+lst=[10,20,30,40,50,60]
+tpl=(100,200,300,400,500,600)
+
+
+print_it(*lst)
+print_it(*tpl)
+
+Prog for add,sub,mul,div in one function and multiple return
+def cal_sum_prod( ):
+
+    a = int(input("Enter 1st number"))
+    b = int(input("Enter 2nd Number"))
+    ss=a+b
+    pp=a*b
+    sb=a-b
+    divi=a/b
+    return ss,pp,sb,divi
+
+
+x,y,z,w=cal_sum_prod( )
+print("Values of function for add ,sub,mul,div\n"   ,x   ,y  ,z  ,w)
+
+def ispangram(str):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    for char in alphabet:
+        if char  in str.lower():
+            return True
+        else:
+            return False
+# Driver code
+string = '222333333333'
+if (ispangram(string) == True):
+    print("Yes")
+else:
+    print("No")
+
+def sume( *l):
+    s1,a=0,0
+    for e in l:
+        if e%2==0:
+            s1=s1+e
+        else:
+            a=a+e
+
+    return s1,a
+s02,s01=sume(10,20,0,41,51,61)
+print(s02,s01)
+
+def wordcount(test_string):
+            print("Original string is =",test_string)
+            return len(test_string.split())
+
+ts=input("Enter the string")
+x=wordcount(ts )
+print("Count of words in string",x)
+
+#Program to count frequency of words in String
+str_list="It is true for that that htat it refer that it refer again and again"
+
+str_list=str_list.split()
+
+unique_words=set(str_list)
+
+for word in unique_words:
+    print(word,str_list.count(word))
+
+#Program to find upper and lower case in String:
+s=input("String")
+print("String entered is :",s)
+up,lw=0,0
+for char in s:
+    if char.islower():
+        lw+=1
+    elif char.isupper():
+            up+=1
+print("lower case are ",lw," and upper case are ",up," in ",s," ")
+
+#Program to remove Duplicacy
+str_list=[10,20,30,3.5,10,3.5)
+
+unique_words=list(set(str_list))
+
+print(unique_words)
+
+print(type(str_list))

@@ -1,0 +1,64 @@
+def new_result(result):
+    def inner(marks):
+        for x in marks:
+            if x > 60:
+                print("Congrats you have got distinction in one of the subject")
+                break
+        else:
+            return result(marks)
+    return inner
+def result(marks):
+    for i in marks:
+        if i < 30:
+            print("fail")
+            break
+#Programme for fibonacci series:
+new = new_result(result)
+print(new([10,90,80,75]))
+
+a = 0
+b = 1
+
+for i in range(1, 20):
+            a=a+b
+            b=a-b
+            print(a,end=" ")
+
+#programme for decorator function
+def new_result(result):
+    def inner(marks):
+        for x in marks:
+            if x > 60:
+                print("distinction")
+        else:
+            return result(marks)
+    return inner
+
+@new_result
+def result(marks):
+    for i in marks:
+        if i < 30:
+            print("fail")
+
+
+result([60, 70,80,20,50,20])
+
+
+# Programe for 2  decorator functions
+def upper_d(func):
+    def inner():
+
+        return "first"+func()+"first"
+    return inner
+
+def split_d(func):
+    def splitter():
+        return "second" + func() + "second"
+    return splitter
+
+@split_d
+@upper_d
+def ordinary( ):
+    return "good Morning Decorators is confusing GOD"
+
+print(ordinary())

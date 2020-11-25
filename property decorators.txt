@@ -1,0 +1,20 @@
+# Property decorator
+
+class Employee:
+    def __init__(self,first,last):
+        self.first=first
+        self.last=last
+    @property
+    def email(self):
+        return self.first+"."+self.last+"@amuletic.com"
+
+
+    def fullname(self):
+        return self.first + "." +self.last
+
+e1=Employee("John","Smith")
+e1.first="Jim"
+print(e1.last)
+print(e1.first)
+print(e1.email)
+print(e1.fullname())

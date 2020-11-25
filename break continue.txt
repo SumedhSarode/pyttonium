@@ -1,0 +1,54 @@
+x = 5
+for i in range(1,11):
+    t=x*i
+    if i == 5:
+        break
+    print(t)
+
+chance=0
+while chance<2:
+    x=int(input("Enter the number"))
+    if x%2==0:
+        print ("Good you have entered even number in first chance")
+        break
+    elif chance==0:
+        print("You have 1 more chance")
+
+    elif chance == 1:
+        print("You have no more chance")
+    chance+=1
+
+for letter in "sumedh sarode":
+    if letter=="o":
+        break
+    else:
+        print(letter,end="")
+print("\nThanks")
+
+#Program for continue":
+for letter in "sumedh.sarode":
+    if letter==".":
+        continue
+    else:
+        print(letter,end="")
+print("\nThanks")
+
+#Candy Programme
+av=10
+
+x=int(input("Enter the candies you want"))
+while x>=1:
+    if x>av:
+        break
+    print("Candy availabe")
+
+    x-=1
+
+print("okies no ")
+
+lst=[1,2,-10,-50,-23]
+if 0 not in lst:
+    lst.append(0)
+lst.sort()
+pos=lst.index(0)
+print(pos)

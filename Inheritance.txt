@@ -1,0 +1,12 @@
+class Student:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+
+class Library(Student):
+    pass
+
+S1=Library("Roy",24)
+print(S1.__dict__)
+
+Sumedh

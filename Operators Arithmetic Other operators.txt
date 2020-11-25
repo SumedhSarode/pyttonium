@@ -1,0 +1,114 @@
+3**2
+9
+>>> pow(3,2)
+9
+>>> 10**20
+100000000000000000000
+>>> pow(10,20)
+100000000000000000000
+
+flor value= 5/2 =2.5 which is min value is 2 
+ceil value =5/2 =2.5 which is max value is 3
+
+2%3 modulus is 2 as small number is diveded by large number 
+
+**  / // * %  + - precedence of operators
+
+4>5
+False
+>>> 5>3
+True
+>>> bool(1)
+True
+>>> x=True
+>>> y=int(x)
+>>> y
+1
+>>> Every non zero value is true and zero value is false
+AB">"CD"
+False
+
+>> "AB">"CD"
+False
+>>> 5<15
+True
+>>> 5>4>3>3
+False
+>>> "ab"=="cd"
+False
+>>> 'a'==97
+False
+>>> 
+
+Logical Operators
+
+x or y
+If x is False result is y otherwise x 
+
+x and y
+If x is false result is x otherwise y false is zero or negative number
+
+Bitwise operator
+& | ~ ^ >> <<
+
+operations between binary bits are bitwise operator
+5&6
+4
+>>> 5|6
+7
+>>> 5^6
+3
+>>> -5&6
+2
+>>> bin(2)
+'0b10'
+>>> bin(-10)
+'-0b1010'
+>>> bin(25)
+'0b11001'
+>>> 25>>2 right side shift
+6
+>>> 25<<2 left side shift
+100
+>>> 
+
+Precedence and associativity
+a=5*2//2
+here multiplication and division has same precedence so associativity rules is applied.
+5*2 is evaluated first and then //2 expression
+
+b=4**2**3
+here 2**3 is evaluated first as exponential has higher priprity and then other part
+2**3**2
+512
+>>> 3**2
+9
+>>> 2**9
+512
+
+Identity operators
+x=5
+>>> y=5.0
+>>> x=y
+>>> x is y
+True
+>>> x==y
+True
+>>> x is y
+True
+>>> y=x
+>>> y==x
+True
+>>> y is x
+True
+
+Member ship operator
+x=[10,20,30]
+>>> 20 in x
+True
+>>> x=1,2,3,4
+>>> 2 in x
+True
+>>> x="23456"
+>>> y=str(x)
+>>> 3 in y

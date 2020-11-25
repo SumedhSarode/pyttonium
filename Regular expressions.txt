@@ -1,0 +1,74 @@
+import string
+
+str1 = "Jon is developer musician 2010"
+print("Original string is ", str1)
+
+# use translate function of a string
+# and maketrans function of str class
+new_str = str1.translate(str.maketrans("","", string.ascii_letters))
+
+print("New string is ", new_str)
+
+import re
+name_age='''
+Janice age is 22 and theon is 33
+Gabriel age is 44 and Jeon age 21 '''
+
+ages=re.findall(r'\d{1,3}',name_age)
+names=re.findall(r'[A-Z][a-z]*',name_age)
+
+print(ages)
+print(names)
+
+Ouput:
+['22', '33', '44', '21']
+['Janice', 'Gabriel', 'Jeon']
+
+import re
+
+mesg="Learning python is fun but revise again anad agian"
+
+if re.search("again",mesg):
+    print(100)
+
+Output:
+100
+
+
+mport re
+
+str1="sat hat pat mat dat"
+
+allstr1=re.findall("[shpmb]at",str1)
+for i in allstr1:
+    print(i)
+
+sat
+hat
+pat
+mat
+
+import re
+
+str1="sat hat pat mat bigboobs"
+
+allstr1=re.findall("[^h-m]at",str1)
+for i in allstr1:
+    print(i)
+Output:
+sat
+pat
+
+
+import re
+
+str1="sat hat pat mat"
+
+regex=re.compile("[m]at")
+
+str1=regex.sub("birds",str1)
+
+print(str1)
+
+ouput;
+sat hat pat birds

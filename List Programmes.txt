@@ -1,0 +1,371 @@
+UNlike strings,Lists are mutable
+
+animals=["lion","tiger","horse","elephant","leopard"]
+>>> animals[2:5] # list can be sliced as strings
+['horse', 'elephant', 'leopard']
+>>> animals[4]="hyena"
+>>> animals
+['lion', 'tiger', 'horse', 'elephant', 'hyena']
+>>> animals[3]="hyena"
+>>> animals
+['lion', 'tiger', 'horse', 'hyena', 'hyena']
+>>> animals[2:3]:[] # itelms in the list can be deleted
+>>> animals
+['lion', 'tiger', 'horse', 'hyena', 'hyena']
+>>> animals[2:4]:[]
+>>> animals
+['lion', 'tiger', 'horse', 'hyena', 'hyena']
+>>> animals[2:3]=[]
+>>> animals
+['lion', 'tiger', 'hyena', 'hyena']
+>>> 
+Concentation of lists:
+s=[10,20,30]
+>>> x=[100,200,300]
+>>> s+x
+[10, 20, 30, 100, 200, 300]
+>>> s+=[40]  adding value in the list
+>>> s
+[10, 20, 30, 40]
+
+s
+[10, 20, 30, 40]
+>>> sorted(s)
+[10, 20, 30, 40]
+
+fname=["sumedh","sarode"]
+>>> len(fname)
+2
+
+lst
+[12, 13, 15, 34, 17, 22, 80, 45]
+>>> lst.extend(lst5)
+>>> lst
+[12, 13, 15, 34, 17, 22, 80, 45, 10, 800, 30, 40, 50, 10, 800, 30, 40, 50]
+
+#Programe to found index of the num in the list:
+import random
+num=[]
+
+i=0
+while i<=15:
+   n=random.randint(10,20)
+   num.append(n)
+   i+=1
+
+print(num)
+
+pos=int(input("Enter the number from list"))
+
+for i in range(len(num)):
+   if num[i]==pos:
+      print(pos,"is found at",i,"position in list")
+Output;
+[13, 15, 11, 15, 14, 13, 14, 20, 18, 17, 18, 14, 10, 17, 10, 16]
+Enter the number from list14
+14 is found at 4 position in list
+14 is found at 6 position in list
+14 is found at 11 position in list
+
+
+dubly=[10,20,30,30,20,15,35,15]
+singly=[]
+
+for num in dubly:
+    if num not in singly:
+        singly.append(num)
+print(singly)
+
+#programe to remove -ve numbers;
+
+numeric_list=[10, 20, 30, 40, -20, -30, -3]
+negative=[]
+positive=[]
+
+for num in numeric_list:
+   if num<0:
+      negative.append(num)
+   else:
+      positive.append(num)
+
+print(positive,"list positive")
+print(negative,"list negative")
+
+lower_case=["hi","my","name","is","sumedh"]
+
+
+for i,item  in enumerate(lower_case):
+   lower_case[i]=item.upper()
+
+print(lower_case)
+
+
+a = [ "bhopal", "pune", "raipur" ]
+b = [ "Hyd","Bang","Chen"]
+a+=["kochi"]
+print(a)
+
+#To append the list :
+a.append(value)
+a.append(50)
+
+#when inserted value out of range ,exception error is thrown:
+a = [ "bhopal", "pune", "raipur" ]
+b = [ "Hyd","Bang","Chen"]
+a+=["kochi"]
+print(a[3])
+
+#now if printed (a[4]):
+File "C:/Gitpycode/pyrence/pushnoti.py", line 4, in <module>
+    print(a[4])
+IndexError: list index out of range
+
+#Inserting elements:
+a = [ "bhopal", "pune", "raipur" ]
+b = [ "Hyd","Bang","Chen"]
+a+=["kochi"]
+a.insert(4,"goa")
+print(a[4])
+
+#modifications elements:
+a[0]="Delhi"
+print(a)
+['Delhi', 'pune', 'raipur', 'kochi', 'goa']
+Delhi is modified instead of bhopal
+
+#for removal:
+b = [ "Hyd","Bang","Chen"]
+b.remove("Chen")
+print(b)
+['Hyd', 'Bang']
+
+a=[10,20,30,40,20,30,20]    Removal of multiple occurences
+a.remove(20)
+print(a)
+
+#Sorting
+a=[10,20,30,40,20,30,20]
+a.sort()
+print(a)
+
+# basic exercise for list:
+names=["Anil","Amol","Aditya","Avi","Alka"]
+names.insert(2,"Anuj")
+names.append("zulu")
+names.remove("Avi")
+names[0]="Anilkumar"
+names.reverse()
+print(names)
+
+# basic exercise for list from kindle kanitkar:
+odd=[1,3,5,7,9]
+even=[2,4,6,8]
+c=odd+even
+odd=[1,3,5,7,9]
+even=[*odd,2,4,6,8]   #* prints flatten value
+
+print(even)
+prime=[11,17,29]
+c.insert(0,prime[0])
+c.insert(1,prime[1])
+c.insert(1,prime[2])
+c[9]=100
+c[10]=200
+c[11]=300
+num=len(c)
+print(c)
+print(num)
+
+s=[]
+s.append(1000)
+s.append(2000)
+s.append(3000)
+s.pop()
+s.pop()
+print(s)
+
+# basic exercise for list deque example:
+import collections
+q=collections.deque()  #deque stands for double  ended queue
+q.append("a4apple")
+q.append("b4ball")
+q.append("c4cat")
+
+q.popleft()
+print(q)
+
+import collections
+q=collections.deque()
+q.append("a4apple")
+q.append("b4ball")
+q.append("c4cat")
+
+q.popleft()
+q.appendleft("a4appa")
+print(q)
+
+# basic exercise for list example:
+import random
+a=[]
+for i in range(0,20):
+    a.append(random.randint(10,100))
+print(a)
+
+for i in a:
+    if i>20 and i<50: # i acts as an index ,remove method removes value one at time
+        a.remove(i)
+
+print(a)
+
+#Programe to flatten the elements:
+odd=[1,3,7,9,11]
+x=[2,4,8,10]
+odd=[1,3,7,*x,9,11]
+
+print(odd)
+
+# basic exercise for list position example:
+import random
+a=[]
+for i in range(1,21):
+    a.append(random.randint(0,20))
+
+y=int(input("Enter the nmber"))
+a.append(y)
+print(a)
+
+for i in range(len(a)):
+    if a[i]==y:
+        print(y,"is found at position",i)
+
+# basic exercise for list removing duplicates example:
+import random
+a=[]
+for i in range(1,21):
+    a.append(random.randint(0,20))
+print(a)
+final_list=[]
+for num in a:
+    if num not in final_list:
+        final_list.append(num)
+print("list after removing duplicates",final_list)
+
+# basic exercise for enumerate example:
+import random
+lst=["zero","one","two","three","four","five"]
+
+num=enumerate(lst)
+
+print(list(num))
+
+
+lst=[212,23,96,100]
+count=0
+for f in lst:
+    c=int(5/9*(f-32))
+    lst.append(c)
+    count+=1
+    if count==4:
+        break
+print(lst)
+
+ basic exercise for enumerate example:
+import random
+fahr=[212,120,100,93,37]
+for i,f in enumerate(fahr):
+    c = int(5 / 9 * (f - 32))
+    fahr[i]=c
+    print(f,c)
+
+#basic exercise for counting -ve values example:
+lst=[1,2,-10,-50,-23]
+if 0 not in lst:
+    lst.append(0)
+lst.sort()
+pos=lst.index(0)
+print(pos)
+
+#Sorting List:
+earth=["Berryliun","Calcium","Strontium","Barium","Radium"]
+earth.sort()
+print(earth)
+
+#Sorting List in reverse : we need to specify reverse=true
+
+earth=("Berryliun","Calcium","Strontium","Barium","Radium")
+earth.sorted()
+print(earth)
+print(type(earth))
+
+Output:
+['Strontium', 'Radium', 'Calcium', 'Berryliun', 'Barium']
+
+#Using soreted function
+earth=["Berryliun","Calcium","Strontium","Barium","Radium"]
+
+print(sorted(earth))
+print(type(earth))
+
+F=[1,2,3,4,5]
+sum=0
+
+for num in F:
+   sum=sum+num
+   print(sum)
+
+Output:
+1
+3
+6
+10
+15
+
+#Program to count the frequency of numbers in list:
+lst1=[1,2,3,4,5,1,2,4]
+i=0
+for e in lst1:
+   if lst1.index(e)==i:
+      print(lst1.count(e))
+
+   i+=1
+
+Comprehension and all functions:
+
+
+list1=[int(x) for x in input().split(",")]
+1,2,3,4,5
+>>> list1
+[1, 2, 3, 4, 5]
+
+All
+Returns true if all of the items are True 
+
+>>> mylist = [True, True, True]
+>>> x=all(mylist)
+>>> x
+True
+>>> s=["a","b","c"]
+>>> a=all(s)
+>>> a
+True
+>>> mix=["a",1,"b"]
+>>> m=all(mix)
+>>> m
+True
+>>> mix=["a",0,"b"]
+>>> m=all(mix)
+>>> m
+False
+
+#Programme to print list of prime numbers from 1 to 100:
+x=[]
+for j in range(2,100):
+ for i in range(2 ,j):
+   if j%i==0:
+
+      break
+ else:
+        x.append(j)
+print(x)
+
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]

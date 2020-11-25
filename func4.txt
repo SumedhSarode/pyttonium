@@ -1,0 +1,26 @@
+def students(**reports):
+    for name,marks in reports.items():
+        print(name,marks,end="")
+
+students(name="A",marks=100)
+students(name="B",marks=200)
+
+###def score(player,*runs):
+    print("player",player)
+    total_runs=0
+    for r in runs:
+        total_runs=total_runs+r
+    return total_runs
+
+
+def numbers(*args):
+    even=0
+    odd=0
+    for ele in args:
+        if ele%2==0:
+            even=even+ele
+        else:
+                odd=odd+ele
+                
+    return odd,even   
+

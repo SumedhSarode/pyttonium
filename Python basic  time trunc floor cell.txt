@@ -1,0 +1,59 @@
+import time
+
+print("Setting timer for 5 secs")
+time.sleep(5.0)
+print("Get up your sleep time is over")
+time.sleep(5.0)
+print("Ok you can sleep for 5 more sec.")
+time.sleep(5.0)
+print("Get up")
+
+import time
+
+result = time.localtime()
+print("result:", result)
+print("\nyear:", result.tm_year)
+print("tm_hour:", result.tm_hour)
+
+#Programe t oround the numbers
+bs=float(input("Enter basic salary "))
+hra=(10/100)*bs
+da=(20/100)*bs
+
+gs=bs+hra+da
+print(round(gs,2))
+
+farh=float(input("Enter the temp"))
+
+cent=((farh-32)*5/9)
+
+print(round(cent,2))
+
+import keyword
+print(keyword.kwlist)
+
+name="s","u","m","e","d","h"
+
+for unicode in name:
+    print(ord(unicode))
+
+ x=0b101
+>>> x
+5
+>>> bin(5)
+'0b101'
+>>> bin(8)
+'0b1000'
+>>> y=0b1110
+>>> y
+14
+>>> bin(14)
+'0b1110'
+>>> x=0x3f
+>>> x
+63
+>>> hex(63)
+'0x3f'
+>>> oct(88)
+'0o130'
+>>> 

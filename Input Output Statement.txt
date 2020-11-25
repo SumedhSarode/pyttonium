@@ -1,0 +1,38 @@
+Printing statements:
+Every print statement prints ouput on new line
+x=10
+y=20
+z=30
+print(x,end=":") # here ends add by what the line as to be ended rather than new line character
+print(y,end=",")
+print(z)
+
+
+
+x="Heelo Students"
+y="Learn Python"
+z="Eat Samosas"
+print(x,y,z,sep=":") #sep function puts the by what the string should be seprated
+
+Output:
+Heelo Students:Learn Python:Eat Samosas
+
+#Formatting ouput with replacement operator
+name="Sumedh"
+age=40
+married="married"
+insured="insured"
+print("Employee {} whose age {} is {} so {}".format(name,age,married,insured ))
+
+
+name=input("Enter name")
+empid=int(input("Enter Id"))
+org="TechM"
+sal=0
+years=int(input("Enter years"))
+if years>3:
+    sal=20
+else:
+    sal=10
+
+print("Emp name {} with emp id {} of org {} spend {} years so sal is {}".format(name,empid,org,years,sal))

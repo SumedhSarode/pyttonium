@@ -1,0 +1,74 @@
+input=input("Enter the password")
+if len(input)<6:
+    print("password too short")
+else:
+    print("password is set")
+
+input = int(input("Enter the number"))
+if input % 2 ==0:
+    print(input,"number is even")
+else:
+    print(input,"number is odd")
+
+
+#Programe to find type of triangle:
+a=int(input("Enter side a"))
+b=int(input("Enter side b"))
+c=int(input("Enter side c"))
+
+if a!=b and a!=c and b!=c:
+    print("This is scalene triangle")
+elif a==b and b==c:
+    print("Trianle is equilateral triangle")
+elif a==b or c==b or a==c:
+    print("Triaangle is isosceles triangle")
+
+#Programe to get discount;
+qty=int(input("Enter the quantity"))
+price=int(input("Enter the price"))
+sale=qty*price
+if sale>1000:
+    dis=10
+    total_exp=qty*price*(dis/100)
+    print("price after discount", total_exp)
+else:
+    dis=0
+    total_exp=qty*price
+    print("price without discount", total_exp)
+
+#Programe for calculating marks:
+marks=int(input("Enter the marks"))
+per=(marks/800)*100
+
+if per >= 60:
+    print(" You have got first class\n")
+elif per < 60 and per>=50:
+    print(" You have got second class\n")
+elif per <=40:
+    print(" You have got pass class\n")
+else:
+    print("You have failed\n")
+
+#Driver insured or not:
+marital_status=input("Enter the marital status")
+gender=input("Enter the gender")
+age=int(input("Enter the age"))
+if marital_status =="married":
+    print("Driver has to be insured")
+elif marital_status=="unmarried" and gender=="male" and age>30:
+    print("With 3 conditions :Driver has to be insured")
+elif marital_status == "unmarried" and gender == "female" and age > 25:
+    print("Female Driver has to be insured")
+else:
+    print("Driver is not insured")
+
+#Programe to find the youngest of all:
+ram=int(input("Enter ram age"))
+shyam=int(input("Enter shyam age"))
+radha=int(input("Enter radha age"))
+if ram<shyam and ram<radha:
+    print("ram is youngest")
+elif shyam<ram and shyam<radha:
+    print("shyam is youngest")
+else:
+    print("radha is the youngest")

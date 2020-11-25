@@ -1,0 +1,15 @@
+x=int(input("Enter no"))
+y=int(input("Enter y"))
+print(x/y)
+print("haleted")
+
+Traceback (most recent call last):
+  File "C:\Python\Python38\funtest6.py", line 3, in <module>
+    print(x/y)
+ZeroDivisionError: division by zero
+
+For division by zero error python automatically calls the class which has code of zerodivision error and returns error.
+But we don't want to end the program ut should systematically handle the system
+
+Also message should get displayed,
+

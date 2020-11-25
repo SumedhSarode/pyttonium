@@ -1,0 +1,14 @@
+Exception Handling ErrorZeroDivisionError: division by zero
+
+x=int(input("Ente the num"))
+y=int(input("Ente the num"))
+try:
+    z = x / y
+    print(z)
+
+except TypeError:
+    print("Value entered is zero")
+    print("Hope good priting")
+
+finally:
+    print("Value entered is error")

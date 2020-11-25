@@ -1,0 +1,62 @@
+Operators:
+
+Arithmetic operators
+Relation operators
+logical operator
+Bitwise operator
+Assignment operator
+Special operators
+
+Arithmetic operators:
++-*/ // floor division %-Modulus operator
+
+#Division operator and Floor Operstor
+
+x=22
+y=7
+pi=x/y
+print("value of pi",pi)
+
+now ;
+pi=x//y this is floor division
+rejects the fraction part
+ x=22
+>>> y=7
+>>> x/y
+3.142857142857143
+>>> x//y
+3# floor division
+>>> x///y
+SyntaxError: invalid syntax
+>>> x//y
+3
+
+Relation Operators or Comparison Operators: Returns a boolean value
+====================
+>===> Greater than  a=10 b=20 print(a>b) returns false  so returns boolean value
+<====> Less than
+>=
+<=
+==
+a = (14<=7)
+b = (14>=7)
+c = (14<7)
+d = (14>7)
+e = (14==7)
+f = (14!=7)
+
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+print(f)
+
+Assignment operator:
+=====================
+use to assign value to variable
+a=10
+compunded assignemt
+a=1
+a+=2
+a=a+2

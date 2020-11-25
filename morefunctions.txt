@@ -1,0 +1,34 @@
+without function:
+sent=(input("Enter the input"))
+albet=0
+num=0
+for s in sent:
+   if s.isalpha():
+      albet+=1
+   elif s.isdigit():
+       num+=1
+
+print("No of alphabets and digits in",sent,"are", albet,num)
+
+with function:
+
+def count_dig_letters(sent):
+  d = {"digit": 0, "letter": 0}
+  for s in sent:
+    if s.isalpha():
+      d["letter"] += 1
+    elif s.isdigit():
+      d["digit"] +=1
+  return d
+print(count_dig_letters("kapil 420"))
+
+from datetime import*
+today=datetime.date(1977,3,8)
+birthday="19770308"
+yyyy=birthday[4:6]
+dd=birthday[6:8]
+mm=birthday[4:6]
+dob=datetime.date(yyyy,mm,dd)
+age_in_days=(today - dob)
+age_in_years=age_in_days / 365
+print(age_in_years)

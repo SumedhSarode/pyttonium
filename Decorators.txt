@@ -1,0 +1,414 @@
+#Simple example:
+
+def handsome(average):
+    def gym():
+        print("I am smart now")
+        average()
+    return gym    
+@handsome
+def ugly():
+    print("I was Ugly")
+
+ugly()
+
+
+#Concept of d=ecorator:
+1.When we put @symbol it means it passes ugly function as parameter to the handsome function
+2.handsome function is called and executed.
+3.It sees only return gym staement and returns to ugly again
+4.gym reference is passed to ugly which in turn calls gym function in alias manner
+for e,g
+i.return gym passes reference id to ugly and ugly becomes gym()
+ii.gym calls function gym and prints "I am smart"
+iii.average is ugly which is passed by handsome decorators
+def print_m(msg):
+    def inner():
+        print(msg)
+        return msg
+    return inner
+call_func=print_m("hi")
+print(call_func())
+
+#def func1(msg):
+    print(msg)
+    
+func1("Hello")
+second=func1
+
+second("Sumedh")
+
+#Function as parameter:
+def func1(x):
+    return x+100
+def func2(y):
+    return 100-y
+
+def func3(inc,x):
+    result=inc(x)
+    return result
+func3(func1,100)
+200
+>>> func3(func2,100)
+0
+
+def makr_multiplier(n):
+   def multiplier(x):
+       return n*x
+   return multiplier
+
+times=makr_multiplier(3)
+print(times(8))
+
+======================================================
+#Decorators example;
+def ordinary2pretty(refe):
+    def inner():
+        print("i am decorated ")
+        refe()
+    
+    return inner
+
+def ordinary():
+    print("I am ordinary")
+
+make_over=ordinary2pretty(ordinary)
+make_over()
+
+Output:
+i am decorated
+I am ordinary
+
+
+def outer():
+    name="sumedh"
+    def inner():
+        surname="sarode"
+        full=name+surname
+        return full
+    return inner
+employee=outer()
+print(employee())
+
+#To print the result of inner function we have to use closure technique in which
+inner is pass as variable and collected in a variable outside function
+
+outer=() is calling function
+a=outer inner variable is collected in a
+
+
+Decorators:
+========================================================
+def upper_str(uc):
+   def func11():
+       str1=uc()
+       return str1.upper()
+   return func11()
+
+def print_str():
+    return "good morning"
+
+print(print_str())
+a=upper_str(print_str)
+print(a)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Decorators:
+ First you have to know or remember that function names are references to functions and that we can assign multiple names to the same function:
+
+#Multiple names for function
+
+def succ(x):
+    return x+1
+
+name1=succ
+name1(10)
+name2=succ
+name2(20)
+
+name1(10)
+11
+>>> name2(20)
+21
+>>> name3(30)
+Traceback (most recent call last):
+  File "<pyshell#65>", line 1, in <module>
+    name3(30)
+NameError: name 'name3' is not defined
+
+
+def f():
+    def g():
+        print("Hi I am in g")
+        print("i have been called from f")
+    print("You are calling g()")
+    g()
+f()    
+
+
+#Function inside the function:
+def temperature(a):
+    def celcius2farenhiet(x):
+        return 9*x/5+32
+        
+    return "its " +  str(celcius2farenhiet(a))  +  " celcius"
+    
+print(temperature(110)) 
+
+def centimeter(x):
+    def inches():
+        return (x//2.54)
+    return "its " + str(inches()) + " from "+str(x)+" centi"
+
+#we can pass functions - or better "references to functions" - as parameters to a function. We will demonstrate this in the next simple example:
+
+def g():
+    print("Hi i am g")
+    print("Thanks for calling me")
+
+def f(func):
+    print("Hi i am f")
+    print("I will cal g")
+    func()
+    print("real name of func is " + func.__name__)
+    
+f(g)
+
+Hi i am f
+I will cal g
+Hi i am g
+Thanks for calling me
+real name of func is g
+
+
+import math
+def foo(func):
+    res=0
+    for x in [45,90,30]:
+        return func(x)
+
+print(foo(math.sin))    
+print(foo(math.cos))
+print(foo(math.tan))  
+
+Ouput:
+0.8509035245341184
+0.5253219888177297
+1.6197751905438615
+
+def disp():
+    def show():
+        print("Finally i got how function returns works")
+        print("Hi")
+        return "End of the show"
+    print("Hi I am in disp")    
+    return show
+    
+real=disp()
+print(real())
+
+
+def func1(msg):
+    print("I am in finc1")
+    
+    def func2():
+        print(f"Hi {msg}")
+        return "bye"
+    return func2()
+    
+        
+print(func1("sumedh"))
+
+#Functions returning Functions:
+def greetings(lang):
+    def local_greet(name):
+        if lang=="hindi":
+            phrase="namaste"
+        elif lang =="english":
+            phrase="hi "
+        else:
+                phrase="ramram  "
+
+        return phrase+name  
+            
+    return local_greet   
+
+say_hi=greetings("urdu")
+print(say_hi("sumedh"))
+       
+  
+def outer_func(msg):
+    def inner_func():
+        print(f"Hi {msg}")
+    return inner_func
+       
+print(outer_func("Sumedh"))
+
+
+def upper_case(strg):
+    def lower_case():
+        lc=strg.lower()
+        return lc
+    return lower_case
+uc=upper_case("Sumedh AaroDe")
+print(uc())
+
+#Functions as Parameters
+def g():
+    print("func2 called func1")
+
+def func2(func1):
+    print("i am calling func1")
+    func1()
+
+func2(g)    
+
+
+def distinction(func):
+    def congrats(marks):
+        if marks>70:
+            print ("COngratulations You have got distinction") # after return statement no statement is executed
+
+        else:
+            print ("No Distinction")
+
+        func(marks)
+
+    return congrats
+@distinction
+def per(percentage):
+    if percentage>60:
+        print("First class")
+    else:
+        print("But Pass")
+
+per(80)
+
+#division error programme:
+def smartdiv(msg):
+    def error(a,b):
+        if a<b:
+            print("a value should be large")
+        else:
+                return msg(a,b)
+    return error
+
+
+@smartdiv
+def div(a,b):
+    print (a/b)
+
+
+print(div(1,3))
+
+iv(9,0)
+Error :Cannot divide by zero
+>>> div(9,3)
+3.0
+>>> div(12,3)
+4.0
+>>> div(12,0)
+Error :Cannot divide by zero
+>>> div(12,14)
+0.857142857142857
+
+#progrma to get discount on original
+ef modified(func):
+    def added(n):
+        print("adding new value")
+        return n-n*(15/100)
+    return added
+@modified
+def original(n):
+    return n
+
+#Prog of factorial using decorator which will raise exception:
+def exception_facto(facto):
+     def error1(n):
+         if type(n)==int and n>0:
+             return facto(n) 
+         else:
+             raise Exception("Argument is not an integer")    
+      
+     return error1
+    
+def facto(n):
+    fact=1
+    for i in range(1,n+1):
+        fact=fact*i
+    return "fact of  " + str(n) + " is  " + str(fact)  
+    
+
+result=exception_facto(facto)    
+result(5)
+
+Basically when you pass reference of one function in another function,it means you can access the elements of the original function and vice versa
+without passing reference you cannot acccess the elements of other functions.
+
+def exception_facto(facto):
+     def error1(n):
+         if type(n)==int and n>0:
+             return facto(n) 
+         else:
+             raise Exception("Argument is not an integer")    
+      
+     return error1
+    
+def facto(n):
+    fact=1
+    for i in range(1,n+1):
+        fact=fact*i
+    return "fact of  " + str(n) + " is  " + str(fact)  
+    
+
+result=exception_facto(facto)    
+result(5)
+
+def distinction(func):
+    def congrats(marks):
+        if marks>70:
+            print ("COngratulations You have got distinction") # after return statement no statement is executed
+
+        else:
+            print ("No Distinction")
+
+        func(marks)
+
+    return congrats
+@distinction
+def per(percentage):
+    if percentage>60:
+        print("First class")
+    else:
+        print("But Pass")
+
+per(80)
+
+def greetings_evenings(msg):
+    def evening_messages(x):
+        print(f" {x} Good evening")
+        a=msg()
+        print (a)
+    return evening_messages
+
+def greetings_mornings(msg1):
+    def morning_messages(y):
+        print(f" {y} Good Morning")
+        b=msg1()
+        print (b)
+    return morning_messages
+
+@greetings_mornings
+def msg():
+    return("Hi")
+
+
+def func1(x,y,f):
+    print ("I am function1")
+    func2()
+
+   
+def func2():
+    print("I ma functional2")
+
+
+func1=func1(2,3,func2)

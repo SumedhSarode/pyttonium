@@ -1,0 +1,194 @@
+File is use to store data pemanently in our computer
+
+File is also calles flat file databse in python
+
+Types of Files:
+1.Text files :-It stores data .Humran readable format
+2.Binary Files:-Images,video,audio files
+
+
+f=open("Actors.txt","w")
+f.write("Rajesh Khanna\n")
+f.write("Akshay Kumar\n")
+f.write("Amitabh Bachhan\n")
+f.write("Abhishek")
+f.close()
+f=open("Actors.txt","r")
+data=f.readlines(18) # retur nbytes not more than 18  read reads entire file,return single strings.readline consider each line as string
+print(data)
+
+#tell ans seek
+f=open("Actors.txt","r")
+print(f.tell())
+f.seek(4)
+print(f.tell())
+data=f.read()
+print(data)
+
+Ouput:
+0
+4
+sh Khanna #data=f.read()
+Akshay Kumar
+Amitabh Bachhan
+AbhishekRajesh Khanna
+
+r+ w+ a+:
+f=open("Actors.txt",mode="r+")
+print(f.tell())
+f.write("Aishwarya")
+print(f.tell())
+data=f.read()
+print(data)
+print(f.tell())
+Output
+0
+9
+anna
+Akshay Kumar
+Amitabh Bachhan
+AbhishekRajesh Khanna
+
+f=open("Actors.txt",mode="w+")
+print(f.tell())
+f.write("Aishwarya")
+print(f.tell())
+f.seek(0)
+data=f.read()
+print(data)
+print(f.tell())
+
+0
+9
+Aishwarya #by f.seek(0) cursor returns to zero and prints Aishwarya
+9
+
+Open a file :- 
+
+f=open(filename,mode)
+nov=open("November.txt","w") This will create file name November in the folder where python is installed.
+
+Write Method()
+nov=open("November.txt","w") 
+nov.write("THis is month of October\n")
+nov.write("THis is month of november2020\n")
+nov.write("THis is month of december2020\n")
+nov.close()
+
+Now if we use x mode it will give error   nov=open("November.txt","x") 
+FileExistsError: [Errno 17] File exists: 'November.txt' as x mode needs new file
+>>> 
+
+append mode:
+
+nov=open("November.txt","a") # Adds data to the existing file,doesnot overwrite the data
+nov.write("THis is month of October\n")
+nov.write("THis is month of november2020\n")
+nov.write("THis is month of december2020\n")
+nov.write("THis is month of January2021\n")
+nov.close()
+folowing modes in Python
+
+r --> open existing file in read mode for read operation
+w  open file for write operation
+a open file for appending  operation
+r+ To read and write data into file
+w+ To write and read data into file
+a+ To append and read from file
+x  To open a file in exclusive mode
+
+
+Seek and tell:
+f.read()
+'1234567890'
+f.seek(6)
+6
+f.seek(0,1)  This will give the current position:
+6
+
+Working with binary file:
+f.read()f=open("myfile.bat",'wb')
+f.write("1234567890".encode())
+f.close()
+f=open("myfile.bat",'rb')
+data=f.read()
+print(data)
+b'234567890'
+
+f.read() # will print all strings
+f.read(4) will take pointer to 4th string
+f.read(4)
+b'1234'   4 is now current postion
+f.seek(7,1)  go to 7th position from current position (1 denoted current position)
+11
+
+
+
+=====================================================================================
+
+Closinga file
+
+f.close()
+===================================================================================
+#Various properties of the file
+
+name--> Name of the open file
+mode--> Mode in which the file is opened
+closed --->Returns boolean value indicate that file is closed or not
+readable() -->Returns boolean value if file is readable or not
+writeable() -->Returns boolean value if file is writeable or not
+writeable() 
+
+===================================================================================
+f=open("Student.txt",'w')
+
+Write method
+
+1.write(str)
+2.write(list of lines)
+
+f=open("Student.txt","w")
+f.write("Rakesh")
+f.write("Raj")
+f.write("Ritsh")
+f.write("Rajesh")
+
+
+pid=0
+name=""
+cost=""
+
+f=open("Transactions.txt",'w')
+
+print("Enter 5 Tr")
+for i in range(5):
+    print("\n Transaction i+1")
+    pid=input("Enter Product id")
+    name=input("Enter Product name")
+    cost=input("Enter Product cost")
+    f.write(f"{pid}{name}{cost}\n")
+f.close()    
+
+read() To read total data from the file
+read(n) To read n number of character from the file
+readline() To read only one line
+readlines() To read list
+
+f=open("transactions.txt",'r')
+data=f.read()
+data =f.read(10)
+data=f.readlines(2)
+print(data)
+
+f=open("transactions.txt",'r')
+s_pid=input("Search Product")
+lines= f.readlines()
+
+for line in lines:
+   rec=line.split()
+   if s_pid==rec[0]
+   print("Record Found")
+   print(rec)
+   break
+else:
+   print("Record Not found")

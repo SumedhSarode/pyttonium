@@ -1,0 +1,19 @@
+x=1
+while x<25:
+    if x%5==0:
+        x+=1
+        continue
+
+    print(x,end=",")
+    x+=1
+
+digit=0
+alpha=0
+city="Hyderabad 58000"
+for s in city:
+    if s[0].isdigit()==True:
+        digit+=1
+    elif s[0].isalpha()==True:
+        alpha+=1
+print("No of digits",digit)
+print("No of alphabets",alpha)

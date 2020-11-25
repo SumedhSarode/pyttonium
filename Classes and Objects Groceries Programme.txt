@@ -1,0 +1,101 @@
+class Groceries:
+    def __init__(self,price,qty):
+        self.price=price
+        self.qty=qty
+        self.tot=self.price*self.qty
+
+    def update(self,shop1,shop2):
+        self.shop1 = shop1
+        self.shop2 = shop2
+        if self.tot>1000:
+            print("shopping done from ",shop1)
+        else:
+            print("shopping done from ",shop2)
+
+egg=Groceries(10,30)
+print("egg = ",egg.__dict__,"INR")
+egg.update("amazon","bigbazaar")
+
+
+milk=Groceries(150,5)
+print("milk =", milk.__dict__ ,"INR")
+milk.update("amazon","flipkart")
+
+bread=Groceries(23,4)
+print("bread =", bread.__dict__,"INR")
+bread.update("amazon","reliancemart")
+
+
+total_expenses=egg.tot+bread.tot+milk.tot
+print("Total expenses of month =", total_expenses)
+
+
+lass Students:
+    def __init__(self,name,rollno,marks,branch):
+        self.name=name
+        self.rollno=rollno
+        self.marks=marks
+        self.branch=branch
+
+    def result(self):
+        if self.marks>60:
+           return f"Congrats {self.name} \nBranch {self.branch} Roll no {self.rollno}  has secured {self.marks} percentage"
+        else:
+            return f"Study Hard {self.name}"
+
+
+Stud1=Students("Sumedh",800,75,"science")
+print(Stud1.result())
+
+
+
+#Program to Class Method:
+class Students():
+
+
+
+    @classmethod
+    def display_in_per(cls,name,marks1):
+        #cls.name=name
+        #cls.marks1=marks1
+        print(name,str((int(marks1)/1000 )*100))
+
+Students.display_in_per("Dia",578)
+
+
+class Employee:
+    no_of_leaves=0
+    sal_hike=0
+    @classmethod
+    def change_of_leaves(cls,leaves,sal_hike):
+           cls.leaves=leaves
+           cls.sal_hike = sal_hike
+           return leaves,sal_hike
+
+
+
+harry=Employee()
+print(harry.change_of_leaves(10,1000))
+
+class Account:
+    def __init__(self,name,balance):
+        self.name=name
+        self.balance=balance
+    def get_name(self):
+         return self.name
+
+    def bal_after_withdrawl(self,withdrawl):
+        self.withdrawl=withdrawl
+        self.balance=self.balance-self.withdrawl
+        return self.balance
+    def bal_after_depo(self,deposit):
+        self.deposit=deposit
+        self.balance=self.balance+self.deposit
+        return self.balance
+
+a1=Account("Sumedh",10000)
+a2=Account("Sarode",8000)
+print(a2.name, "has", a2.balance)
+print(a2.get_name(),"has balance",a2.bal_after_depo(20000),"after depositing",a2.deposit)
+print(a2.get_name(),"has balance",a2.bal_after_withdrawl(5000),"after withdrawl of ",a2.withdrawl)
+

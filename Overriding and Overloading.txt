@@ -1,0 +1,349 @@
+class Bank:
+    def rateofinterest(self):
+        return 0
+
+class Icici(Bank):
+
+    def rateofinterest(self):
+        return 10.5
+
+Obj=Icici()
+print(Obj.rateofinterest())
+
+Obj1=Bank()
+print(Obj1.rateofinterest())
+
+class Human:
+    def sayHello(self,name=None):
+        if name==None:
+            print("hello Blank")
+        else:
+            print("hello"+name)
+
+obj=Human()
+obj.sayHello()
+obj.sayHello("Sumedh")
+
+
+# Overiding variable
+class Bird:
+    def fly(self,name=None):
+        if name=="parrot":
+            print("parrot can fly")
+        if name=="crow" :
+            print("crow can fly")
+        else:
+            if name is None:
+                print("No Input")
+
+obj=Bird()
+obj.fly("crow")
+obj.fly("parrot")
+
+#ducktyping
+
+class Bird:
+    def fly(self):
+        print("Birds can fly")
+
+class Aeroplane:
+    def fly(self):
+        print("Aeroplane can fly")
+
+class Fish:
+    def fishfly(self):
+        print("Fish cannot fly")
+
+for obj in Bird(),Aeroplane():
+    obj.fly()
+obj1=Fish()
+obj1.fishfly()
+
+class Aeroplane:
+    def fly(self):
+        print("Aeroplanes fky")
+
+class Birds:
+    def fly(self):
+        print("Birds fly")
+
+class Fish:
+    def fly(self):
+        print("fish don't fly")
+
+def whofly(obj):
+    obj.fly()
+a=Aeroplane()
+whofly(a)
+b=Birds()
+whofly(b)
+f=Fish()
+whofly(f)
+
+class  Pycharm:
+    def execute(self):
+        print("Compling")
+        print("CodeChecking")
+
+class  laptop:
+    def code(self,ide):
+        ide.execute()
+
+class Myeditor:
+    def execute(self):
+        print("Spell Check")
+        print("Desing")
+        print("Drawing")
+        print("Compling")
+        print("CodeChecking")
+
+ide=Myeditor()
+
+lap1=laptop()
+lap1.code(ide)
+
+
+#Operator Overloading
+
+a="Sumedh"
+b="Sarode"
+
+print(a  + b)
+print(str.__add__(a,b))
+
+class Sample:
+
+     def __init__(self,age,ms,gender):
+         self.age=age
+         self.ms=ms
+         self.gender=gender
+
+     def showstatus(self):
+        if self.age > 30 and self.ms=="married" and self.gender == "male":
+            print("driver is  insured")
+        elif self.age < 30 and self.ms=="unmarried" and self.gender == "male":
+            print("driver is  insured")
+        elif  self.age > 30 and self.ms=="married" and self.gender == "female":
+            print("driver is   insured")
+        else:
+            print("Insurance not required")
+
+
+
+C1= Sample(18,"unmarried","male")
+C2=Sample(38,"married","male")
+C1.showstatus()
+C2.showstatus()
+
+class Employee:
+    def set_data(self,name,age,salary):
+        self.name=name
+        self.age=age
+        self.salary=salary
+
+    def data_show(self):
+        print(self.name,self.age,self.age)
+
+e1=Employee()
+e2=Employee()
+e3=Employee()
+e1.set_data("Ramesh",24,150000)
+e1.data_show()
+e2.set_data("Suresh",27,850000)
+e2.data_show()
+e3.set_data("Mahesh",87,8510000)
+e3.data_show
+print(e1.__dict__,e2.__dict__,e3.__dict__)
+
+class Student:
+    def __init__(self,name,marks):
+        self.name=name
+        self.marks=marks
+
+    def dos(self):
+        print(self.name,self.marks)
+
+    @classmethod
+    def get_result(cls):
+        return (name,str((int(marks)/600)*100))
+
+S1=Student("sia",97)
+S1.dos()
+marks="560"
+name="sia"
+
+S2=Student(name,marks1)
+S2.dos()
+
+class Student:
+    hom="arahant"
+    def __init__(self,m1,m2,m3):
+
+        self.m1=m1
+        self.m2=m2
+        self.m3=m3
+
+    def result(self):
+        return (self.m1+self.m2+self.m3)/3
+
+    @staticmethod
+    def info():
+        print("Hi i am working")
+
+    @classmethod
+    def home(cls):
+        return cls.hom
+
+S1=Student(45,65,78)
+S2=Student(45,56,89)
+print(S2.result())
+print(Student.home())
+Student.info()
+
+Method overloading:
+One Method can perform different operations or tasks:
+Python | Method Overloading example:
+
+Function to take multiple arguments 
+def add(datatype, *args): 
+  
+    # if datatype is int 
+    # initialize answer as 0 
+    if datatype =='int': 
+        answer = 0
+          
+    # if datatype is str 
+    # initialize answer as '' 
+    if datatype =='str': 
+        answer ='' 
+  
+    # Traverse through the arguments 
+    for x in args: 
+  
+        # This will do addition if the  
+        # arguments are int. Or concatenation  
+        # if the arguments are str 
+        answer = answer + x 
+  
+    print(answer) 
+  
+# Integer 
+add('int', 5, 6) 
+  
+# String 
+add('str', 'Hi ', 'Geeks') 
+Output:
+
+11
+Hi Geeks
+The problem with above code is that is makes code more clean
+
+Method 2 (Efficient One):
+
+By Using Multiple Dispatch Decorator
+
+Multiple Dispatch Decorator Can be installed by:
+
+pip3 install multipledispatch
+filter_none
+edit
+play_arrow
+
+brightness_4
+from multipledispatch import dispatch 
+  
+#passing one parameter 
+@dispatch(int,int) 
+def product(first,second): 
+    result = first*second 
+    print(result); 
+  
+#passing two parameters 
+@dispatch(int,int,int) 
+def product(first,second,third): 
+    result  = first * second * third 
+    print(result); 
+  
+#you can also pass data type of any value as per requirement 
+@dispatch(float,float,float) 
+def product(first,second,third): 
+    result  = first * second * third 
+    print(result); 
+  
+  
+#calling product method with 2 arguments 
+product(2,3,2) #this will give output of 12 
+product(2.2,3.4,2.3) # this will give output of 17.985999999999997 
+Output:
+
+12
+17.985999999999997
+In Backend, Dispatcher creates an object which stores different implementation and on runtime it selects the appropriate method as the type and number of parameters passed.
+
+#Method Overriding
+class Add:
+    def sum(self,x,y):
+        print("sum =", x+y)
+
+class Mul(Add):
+    def mul(self,a,b):
+        self.a=a
+        self.b=b
+        super().sum(self.a,self.b)
+        print("mul=",a*b)
+
+
+m=Mul()
+m.mul(155,10)
+
+class Add:
+    def res(self,x,y):
+        print("sum =", x+y)
+
+class Mul(Add):
+    def res(self,a,b):
+        self.a=a
+        self.b=b
+        super().res(self.a,self.b)
+        print("mul=",a*b)
+
+class Sub(Mul):
+    def res(self,p,q):
+        self.p=p
+        self.q=q
+        super().res(self.p,self.q)
+        print("sub=",p-q)
+
+class Allop(Sub):
+    def res(self,p,q):
+        self.p=p
+        self.q=q
+        super().res(self.p,self.q)
+        print("Div=",p/q)
+
+m=Allop()
+m.res(155,10)
+
+
+#Multi inheritance:
+class Animal:
+    def __init__(self,name):
+       self.name=name
+
+class Cat(Animal):
+    def talk(self):
+        print ("meow")
+
+class Dog(Animal):
+    def talk(self):
+        print ("bark")
+
+def action(obj):
+    obj.talk()
+
+
+
+prani=[Cat("Sunny"),Dog("Moti"),Cat("Binny"),Cat("Ginny")]
+for ele in prani:
+    print(ele.name,end=" ")
+    action(ele)

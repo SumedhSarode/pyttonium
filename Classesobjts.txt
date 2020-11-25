@@ -1,0 +1,173 @@
+class Student:
+    def __init__(self,name,rollno,marks,sem):
+      self.name=name
+      self.rollno=rollno
+      self.marks=marks
+      self.sem=sem
+
+s=Student("Anshu",88,91,"fourth")
+print(s.name,s.rollno,s.marks,s.sem)
+
+s2=Student("Katrina",51,99,"fourth")
+print(s2.name,s2.rollno,s2.marks,s2.sem)
+
+class Employee:
+    def __init__(self, name,sal,age,email):
+        self.name = name
+        self.sal = sal
+        self.age = age
+        self.email = email
+
+
+emp1=Employee("Roahn",150000,34,"r@gmail.com")
+emp2=Employee("soahn",650000,34,"s@gmail.com")
+
+
+print(emp2.name)
+
+class Student:
+    def __init__(self,name,age,sub,marks):
+        self.name=name
+        self.age=age
+        self.sub=sub
+        self.marks=marks
+
+s1=Student("My name is Rohan",23,"Pythonsub",67)
+s2=Student("Sohan",23,"Javasub",67)
+
+
+print(s1.name,s1.sub,s1.age)
+
+
+class Student:
+    def student_data(self):
+        self.name=input("Enter the name of the student")
+        self.marks=int(input("Enter the marks"))
+        self.rollno=int(input("Enter rollno"))
+        self.sect =input("Enter the section")
+
+    def student_details(self):
+        print("Name of the student is ",s1.name)
+        print("No of marks for",s1.name, "is",s1.marks)
+        print("Roll no for",s1.name,"is",s1.rollno)
+        print(s1.name,"belongs to ",s1.sect)
+
+
+s1=Student()
+s1.student_data()
+s1.student_details()
+
+class Employee:
+    def employee_data(self):
+        self.name=input("Enter the name of the employee")
+        self.empid=int(input("Enter the id"))
+        self.sal=int(input("Enter salary"))
+        self.sect =input("Enter the section")
+
+    def employee_details(self):
+        print("Name of the employee is ",s1.name)
+        print("EmployeeId for",s1.name, "is",s1.empid)
+        print("Salary for",s1.name,"is",s1.sal)
+        print(s1.name,"belongs to ",s1.sect)
+
+
+s1=Employee()
+s1.employee_data()
+s1.employee_details()
+
+#Odd Even Programm for Python Classes:
+class EvenPro:
+    def __init__(self,a):
+        self.a=a
+
+
+
+x=int(input("Enter the no:  "))
+e1=EvenPro(x)
+if e1.a%2==0:
+   print("Even number=",e1.a)
+
+else:
+    print("Given no is odd=",e1.a)
+
+#Programe for Dice throwing
+import random
+class Dice:
+    def __init__(self):
+        self.side=0
+
+    def throw(self):
+        self.side  = random.randint(1,6)
+
+    def get_value(self):
+        return self.side
+
+
+val=Dice()
+val.throw()
+val.get_value()
+print(val.get_value())
+
+
+class Employee:
+
+    def __init__(self,name,salary,role,leaves):
+        self.name=name
+        self.salary=salary
+        self.role=role
+        self.leaves=leaves
+
+
+    def emp_details(self):
+        return f"Employee name is {self.name} and has salary is {self.salary} with role of {self.role} leaves are {self.leaves}"
+
+
+emp1=Employee("sumedh",45602,"Manager",12)
+emp2=Employee("driya",4602,"Manager",10)
+
+
+print(emp1.emp_details())
+print(emp2.emp_details())
+
+
+class Students:
+    def __init__(self,marks,rollno,branch):
+        self.marks=marks
+        self.rollno=rollno
+        self.branch=branch
+
+    def result(self,name):
+        self.name=name
+
+        return f"Name {self.name}  \nBranch: {self.branch} Roll No: {self.rollno} \nPercentage:{self.marks}%"
+
+
+
+Stud1=Students(78,800,"Arts")
+Stud2=Students(55,900,"Science")
+print(Stud1.result("Sumedh"))
+print(Stud2.result("Sarode"))
+
+class Mobile:
+    def __init__(self,model,color,price):
+        self.model=model
+        self.color=color
+        self.price=price
+    def  range(self):
+        print("Mobile :" ,self.model)
+        print("Price:" ,self.price)
+        print("Color",self.color)
+        India_Model=["Spice","Kanban","Jio"]
+        China_Model=["Vivo","Redmi","Nokia"]
+        if self.model in India_Model:
+            return "Mobile is Indian "
+        elif self.model in China_Model:
+            return "Phone type:China"
+
+India=Mobile("Jio","Red",500)
+print(India.range())
+
+Mobile : Jio
+Price: 500
+Color Red
+Mobile is Indian 

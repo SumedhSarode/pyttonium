@@ -1,0 +1,53 @@
+# Programe for recursion:
+
+def factorial(n):
+    print("factorial has been called with n = " + str(n))
+    if n == 1:
+        return 1
+    else:
+        res = n * factorial(n-1)
+        print("intermediate result for ", n, " * factorial(" ,n-1, "): ",res)
+        return res
+
+x=(factorial(5))
+print(x)
+
+#Programe for prime numbers:
+number = int(input("Enter any number: "))
+
+# prime number is always greater than 1
+if number > 1:
+    for i in range(2, number):
+        if (number % i) == 0 and number//number==1:
+            print(number, "is not a prime number")
+            break
+    else:
+        print(number, "is a prime number")
+
+# if the entered number is less than or equal to 1
+# then it is not prime number
+else:
+    print(number, "is not a prime number")
+
+# Programme for recursion of eve num:
+def isEven(num):
+     if(num<2):
+         return (num%2 == 0)
+     return (isEven(num-2))
+num=int(input("Enter the number for check odd or even: "))
+#received input from the user and stored variable nnm
+if(isEven(num)==True):
+#pass the number as an argument to the recursive function
+    print(num,"is an even number")
+else:
+    print(num,"is an odd number")
+
+#programme for Lambda function:
+print("Enter three numbers")
+s=(lambda a,b,c:a if a>b and a>c else b if b>a and b>c else c ) (int(input()),int(input()),int(input()))
+print("greater is",s)
+
+print("Enter the number ")
+s=lambda n:1 if n==1 else n*s(n-1)
+r=s(int(input()))
+print(r)

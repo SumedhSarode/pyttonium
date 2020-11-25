@@ -1,0 +1,342 @@
+Dict has key value pair
+Key is unique
+Key can be any type like number,char
+Dict has heterogenous value
+
+No indexing possible
+Indexing possible in list and tuple
+No indexing so no slicing operator does not work
+
+Data is not set in order in dict like set
+Pair can be done
+dict is mutable,we can add value delete,edit the value
+dict is growable ,and shrinkable
+
+How to make dictionary?
+d={} # dictionary
+we can use contructor:
+d=dict{}
+
+#Dictionary:Simple programme for fromkeys dict values
+lst=["sumedh","sonali"]
+d={1:"A",2:"B"}
+d1=d.fromkeys(lst,"sarode")  # d.fromkeys take values of list mentioned as they are considerd as keys
+print(d1)
+
+import operator
+stock={"relianca":120,"infy":150,"yahho":145,"tcs":133}
+rank=sorted(stock.items(),key=operator.itemgetter(1))  #To sort by values we use operator.itemgetter
+print(rank)
+
+d={1:"A",2:"B"}
+>>> d.get(1)
+'A'
+>>> d.get(2)
+'B'
+
+subjects={85:"maths",98:"english",88:"science",90:"computer fundamentals"}
+marks=int(input("Enter the marks"))
+student=input("Enter name")
+name=subjects.get(marks,student)
+print(f'These are  {name} subject marks of {student}')
+
+Output:
+Enter the marks98
+Enter namesumedh
+These are  english subject marks of sumedh
+
+How to enter values?
+d={100:"Rahul",101:"Samar"}
+
+How to copy:
+s={1:101,2:202}
+a=s.copy()
+b=s
+print(a)
+print(b)
+
+Boys={"Ramesh":23,"Suresh":22,"Mahes":21}
+Girls={"ANita":18,"SUnita":56}
+Coed={**Boys,**Girls}
+print(Coed)
+
+#Dictionary:Simple programme for printing dict values
+dic_of_word={}
+letters=["a","b","c","d","e"]
+for x in letters:
+    print("Enter the word")
+    dic_of_word[x]=input( )
+
+print(dic_of_word)
+
+dic_of_cinema={}
+movies=["action","comedy","romance"]
+for x in movies:
+    print("Enter the movie name")
+    dic_of_cinema[x]=input()
+
+print(dic_of_cinema) 
+
+Output:
+Enter the movie name
+sholay
+Enter the movie name
+aunty no 1
+Enter the movie name
+qsqt
+{'action': 'sholay', 'comedy': 'aunty no 1', 'romance': 'qsqt'}  
+
+Boys={"Ramesh":23,"Suresh":22,"Mahes":21}
+Girls={"ANita":18,"SUnita":56}
+coed={}
+for i in Boys,Girls:
+    coed.update(i)
+print(coed)
+
+# Ascending order of dictionaries
+import operator
+Boys={"Ramesh":23,"Suresh":22,"Mahes":21}
+Girls={"ANita":18,"SUnita":56}
+coed=sorted(Boys.items(),reverse=True,key=operator.itemgetter(0))
+print(coed)
+
+Boys={"Ramesh":23,"Suresh":22,"Mahes":21}
+Girls={"ANita":18,"SUnita":56}
+#coed=sorted(Boys.items(),reverse=True,key=operator.itemgetter(0))
+#print(coed)
+
+
+for k in Boys.keys():
+    print(k)
+
+Output:
+Ramesh
+Suresh
+Mahes
+
+for k in Boys.values():
+    print(k)
+23
+22
+21
+
+sal={"Ramesh" : {"salary":2300,"age":21},
+     "Suresh":  {"salary":2200,"age":22},
+     "Mahes" :   {"salary":21000,"age":34}
+     }
+
+
+maxi=[]
+for d in sal.values():
+    maxi.append(d["age"])
+
+print(max(maxi))
+
+output:34
+
+
+movies={"Akshay":{"Comedy":100000,"Action":200000,"Content":300000},
+        "Hrithik":{"Comedy":200000,"Action":400000,"Content":600000},
+        "Tiger":{"Comedy":10000,"Action":500000,"Content":1000}}
+collection=[]
+for b in movies.values():
+    collection.append(b["Comedy"])
+
+print(collection)
+
+#Only Comedy Colection
+movies = {"Akshay": {"Comedy": 100000, "Action": 200000, "Social": 300000},
+          "Hrithik": {"Comedy": 500000, "Action": 600000, "Social": 700000},
+          "Tiger": {"Comedy": 800000, "Action": 900000, "Social": 221000}}
+ak = []
+
+print(movies["Akshay"]["Comedy"])
+print(movies["Hrithik"]["Comedy"])
+print(movies["Tiger"]["Comedy"])
+
+#Total business of movies:
+movies = {"Akshay": {"Comedy": 100000, "Action": 200000, "Social": 300000},
+          "Hrithik": {"Comedy": 500000, "Action": 600000, "Social": 700000},
+          "Tiger": {"Comedy": 800000, "Action": 900000, "Social": 221000}}
+com = []
+act=[]
+soc=[]
+for s in movies.values():
+    com.append(s["Comedy"])
+    act.append(s["Action"])
+    soc.append(s["Social"])
+
+
+
+print("total business of comedy movies=",sum(com))
+print("total business of action movies=",sum(act))
+print("total business of soc movies=",sum(soc))
+
+
+students={100:"Stud1",200:"Stud2",300:"Stud3"}
+lst=[100,200,300]
+for i in students.keys():
+    a=input("name")
+if a==students[i]:
+    print("Student found")
+else:
+    print("Congratulations")
+
+#get function
+
+students={100:"Stud1",200:"Stud2",300:"Stud3"}
+roll=int(input("Enter roll"))
+name=students.get(roll,"students","chutiya)
+print(f'Congrats{name}')
+
+ypeError: get expected at most 2 arguments, got 3
+
+get functons accepts only 2 arguments
+
+# Count number of letter in dictionaries
+n=(input("Enter the string"))
+counter={}
+for s in n:
+    if s in counter:
+        counter[s]+=1
+    else:
+        counter[s]=1
+
+
+
+for k,v in counter.items():
+    print(k,end=",")
+    print(v)
+
+# multiple keys
+mydict={}
+mydict["Mykeys"]=("Value 1","Value 2")
+print(mydict)
+
+
+rec={"Ajay": {"Maths":150,"Science":160,"Bio":70},
+     "Sonu": {"Maths":70,"Science":40,"Bio":80},
+     "Sumedh" : {"Maths":190,"Science":190,"Bio":190}
+     }
+total={}
+topper=""
+topper_marks=0
+
+for name,info in rec.items():
+    total = 0
+    for sub,marks in info.items():
+        total=total+marks
+        avg=int(total/3)
+        rec[name]={"total":total,"Avg":avg}
+        if avg>topper_marks:
+               topper=name
+               topper_marks=avg
+print(rec)
+print(topper)
+print(topper_marks)
+
+
+rec={"Ajay": {"Maths":150,"Science":160,"Bio":70},
+     "Sonu": {"Maths":70,"Science":40,"Bio":80},
+     "Sumedh" : {"Maths":190,"Science":190,"Bio":190}
+     }
+for name,info in rec.items():
+    print(name,info)
+    for sub,marks in info.items():
+         print(sub,marks)
+
+Output:
+Ajay {'Maths': 150, 'Science': 160, 'Bio': 70}
+Maths 150
+Science 160
+Bio 70
+Sonu {'Maths': 70, 'Science': 40, 'Bio': 80}
+Maths 70
+Science 40
+Bio 80
+Sumedh {'Maths': 190, 'Science': 190, 'Bio': 190}
+Maths 190
+Science 190
+Bio 190
+
+portfolio  =  {"account":["SBI" , "IOB"],
+           "shares" :["HDFC","ICIC","TCS"],
+           "Ornaments":["10gm GOld","10 gm Silver"]
+
+}
+for assets,val in portfolio.items():
+    print(assets,val)
+
+for inv in portfolio.values():
+    print(inv)
+
+#Simple programme to print dict values
+
+grocery_items={ "Tiffin" : 100,"Bottles" : 500, "Caps" : 200}
+grocery_qty={"Tiffin":10,"Bottles":50,"Caps":20}
+
+for key in grocery_items:
+    print(grocery_items[key])
+
+Output:
+100
+500
+200
+
+grocery_items={ "Tiffin" : 100,"Bottles" : 500, "Caps" : 200}
+grocery_qty={"Tiffin":10,"Bottles":50,"Caps":20}
+total=0
+for key in grocery_items:
+   price=grocery_items[key]*grocery_qty[key]
+   total=total+price
+
+print(total)
+
+#Prog to match password:
+
+candi={"Suresh":"su123","ramesh":"rm123"}
+username=input("Enter the user name")
+password=input("Enter the passwd")
+
+for u in candi.keys():
+    if username==u:
+        print("username match")
+        for p in candi.values():
+              if password==p:
+                    print("password match")
+        
+
+print("Invalid User")
+
+
+candi={"Suresh":"su123","ramesh":"rm123"}
+username=input("Enter the user name")
+password=input("Enter the passwd")
+
+for u ,p in candi.items():
+    print(candi[u])
+
+
+marks={"Ajay": {"Maths":150,"Science":160,"Bio":70},
+     "Bonu": {"Maths":70,"Science":40,"Bio":80},
+     "Sumedh" : {"Maths":190,"Science":190,"Bio":190}
+     }
+
+
+marks=dict(sorted(marks.items()))
+print(marks)
+
+
+str_count=input("Enter the string")
+freq={}
+for ch in str_count:
+    if ch in freq:
+        freq[ch]+=1
+    else:
+        freq[ch]=1
+
+print(freq)
+
+3output:
+Enter the stringsumedhsarodesumedhsarode
+{'s': 4, 'u': 2, 'm': 2, 'e': 4, 'd': 4, 'h': 2, 'a': 2, 'r': 2, 'o': 2}

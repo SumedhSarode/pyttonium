@@ -1,0 +1,217 @@
+Sets:
+
+s={10,20,30,40}
+denoted in curly brackets
+
+Set has no duplicate values
+
+Set has no indexing
+s[0] does not work
+
+No slicing operator wil work in sets
+s[1:5] does not work
+
+>>> s={10,20,30}
+>>> s
+{10, 20, 30}
+>>> s={10,20,30,40,50,60,10,20,30}
+>>> s
+{40, 10, 50, 20, 60, 30}
+>>> s[1:2]
+Traceback (most recent call last):
+  File "<pyshell#200>", line 1, in <module>
+    s[1:2]
+TypeError: 'set' object is not subscriptable
+>>> s[1]
+Traceback (most recent call last):
+  File "<pyshell#201>", line 1, in <module>
+    s[1]
+TypeError: 'set' object is not subscriptable
+>>> s=set()
+>>> s=set(10)
+Traceback (most recent call last):
+  File "<pyshell#203>", line 1, in <module>
+    s=set(10)
+TypeError: 'int' object is not iterable
+>>> s=set([10,20,30])
+>>> s
+{10, 20, 30}
+>>> s=set("mysirg")
+>>> s
+{'m', 'y', 'r', 'i', 's', 'g'}
+>>> s={10,20,30}
+>>> s
+{10, 20, 30}
+>>> l=[10,20,30]
+>>> l
+[10, 20, 30]
+>>> s=set(l)
+>>> s
+{10, 20, 30}
+>>>  s={10,2,-3,4,5,8}
+>>> max(s)
+10
+>>> len(s)
+6
+>>> min(s)
+-3
+>>> sum(s)
+26
+>>> 100 in s
+False
+>>> -3 not in s
+False
+>>> -3 in s
+True
+>>> #Sets
+s1={"Ajay","Bhai","Arvind","Bhupinder","akash","bala"}
+s2=set()
+s3=set()
+for ele in s1:
+    if ele.startswith("A" or "a"):
+        s2.add(ele)
+    else:
+        if ele.startswith("B" or "b"):
+            s3.add(ele)
+
+print(s2)
+print(s3)
+
+#Sets
+import random
+s1=set()
+t1=set()
+i=0
+while i<=10:
+   s1.add(random.randint(15,45))
+   i+=1
+
+print(s1)
+count=0
+for ele in s1:
+    if ele < 30:
+        count+=1
+for ele in s1:
+    if ele < 35:
+        t1.add(ele)
+
+Create a set of numbers
+set_of_num = {1, 2, 11, 6, 7, 4, 5, 6}
+# Elements to be deleted
+to_delete = [1, 2, 4, 5]
+# Iterate over the list of elements (to be deleted)
+for elem in to_delete:
+    # Remove element from the set
+    set_of_num.discard(elem)
+print('Modified Set Contents:')
+print(set_of_num)
+
+
+#UNion of Sets;
+s={1,2,3}
+>>> l=[1,5,7]
+>>> s.update(l)  # update the elements of list and tuple
+>>> s
+{1, 2, 3, 5, 7}
+
+Union,superset,subset
+
+subs={10,20,30}
+>>> supers={10,20,30,40,50,60}
+>>> subs.issubset(supers)
+True
+>>> supers.issuperset(subs)
+True
+>>> subs.union(supers)
+{40, 10, 50, 20, 60, 30}
+
+subs.intersection(supers)
+{10, 20, 30}
+
+subs.copy()
+{10, 20, 30}
+>>> su=subs.copy()
+>>> su
+{10, 20, 30}
+
+set4="don"
+>>> set5=set(set4)
+>>> set5
+{'d', 'n', 'o'}
+>>> set4=("sumedh")  # breaks string into set elements
+>>> set5=set(set4)
+>>> set5
+{'h', 'd', 'm', 'e', 'u', 's'}
+>>> set4=("sumedh",4.5,2344,"saro")
+>>> s=set(set4)
+>>> s
+{2344, 'saro', 4.5, 'sumedh'}
+>>> set4=("sumedh",)
+>>> set5=set(set4)
+>>> set5
+{'sumedh'}
+
+
+#Prog of intersection using set{}
+s1={int(x) for x in input("enter the number").split(",")}
+s2={int(y) for y in input("enter the number").split(",")}
+for ele in s1.intersection(s2):
+    print(ele)
+
+names = {"Amarjeep","Sandeep Kaur","Sukhdeep","MandeepKaur","Prajyot Kaur"}
+females=set()
+males=set()
+for female in names:
+    if female.endswith("Kaur"):
+        females.add(female)
+    else:
+        males.add(female)
+print("males are",males)
+print("females are",females)
+
+Output
+males are {'Amarjeep', 'Sukhdeep'}
+females are {'MandeepKaur', 'Prajyot Kaur', 'Sandeep Kaur'}
+
+names = set()
+names.add("Amol")
+names.add("Anil")
+names.add("Anita")
+names.add("Sachin")
+print("After adding 4 names",names)
+names.add("Madhuri")
+names.remove("Amol")
+print("After adding Madhuri",names)
+names.update("Jhanvi")
+print("After adding Jhanvi",names)
+
+Output:
+After adding 4 names {'Sachin', 'Amol', 'Anil', 'Anita'}
+After adding Madhuri {'Anil', 'Anita', 'Madhuri', 'Sachin'}
+After adding Jhanvi {'J', 'Anil', 'Anita', 'a', 'n', 'Madhuri', 'h', 'i', 'Sachin', 'v'}
+
+
+
+num = set()
+count=0
+while True:
+    num.add(random.randint(15,45))
+    if len(num)==10:
+            break
+print("Original Set",num)
+modified=set()
+for ele in num:
+    if ele<30:
+        modified.add(ele)
+        count+=1
+    
+
+
+print(modified)
+print(count)
+
+Ouput:
+Original Set {33, 42, 43, 44, 15, 17, 21, 29, 30, 31}
+{17, 29, 21, 15}
+4
+

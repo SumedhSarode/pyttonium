@@ -1,0 +1,315 @@
+>>> s1='''MySirg   #printing with three quotes:whenever you want to print comma in string use triple quotes in begining of string and ending of string
+trainig
+on Python'''
+>>> s1
+'MySirg\ntrainig\non Python'
+>>> s1='''Python 
+has 
+practice'''
+print(s1) # triple quotes can print on new line
+
+len function gives len of the string
+a="My name is Sumedh"
+len(a)=17
+
+
+index function:
+s1="Sumedh Sarode education Services"
+>>> s1
+'Sumedh Sarode education Services'
+>>> s1.index(e)   starts from 0 as first index in a string and any space is also counted
+'Sumedh   Sarode education Services'
+ 012345 6(space) 7
+Traceback (most recent call last):
+  File "<pyshell#20>", line 1, in <module> #string index should be inserted in qoutes
+    s1.index(e)
+NameError: name 'e' is not defined
+>>> s1.index("Sarode")
+7
+>>> s1.index("s")   
+31
+>>> s1.index("e") 
+3
+>>> s1.index("ces") # ces starts fron index 29,so 29 printed.It shows index where word starts
+29
+
+Count Function:
+ s1.count('e')
+5
+
+Slicing operator
+[start:end:step]
+s1[7:11]
+s1[2:-2]
+s1[:-1] Ths will print from o index to -1
+s1[-1:-3:-1] for printing from negatove values ,-1 step shouldbe given
+message="Hipython"
+print(message[:2:-1]) This prints "nohty" as step is -1 ,starts from -1 to
+ 2
+b="bamboozedsir"
+>>> b[-10:-4]
+'mbooze'
+
+Strings can be concaneted.
+mesg="Hi"
+say="Hello"
+mesg+say
+HiHello
+
+How strings are sliced?
+0 1 2 3 4 5 6 7 8 9 10 11
+  s u m e d h s a r o d e
+-12-11-10-9-8-7-6-5-4-3-2-1
+
+upper() converts to capital letter
+s1.upper()
+ alp="python"
+>>> alp.upper()
+'PYTHON'
+>>> alp.lower()
+'python'
+
+lower() converts to lower letter
+s1.lower
+alp="java is good"
+>>> alp.upper()
+'JAVA IS GOOD'
+>>> alp="Java is GOOd"
+>>> alp.lower()
+'java is good'
+
+s1.startswith("su") returns true
+
+s1.endswith("de") returns true
+
+s1.split() split strings and return as list
+
+Split a string into a list where each word is a list item:
+
+txt = "welcome to the jungle"
+
+x = txt.split()
+
+print(x)
+
+txt = "hello, my name is Peter, I am 26 years old"
+
+x = txt.split(", ")
+
+print(x)
+
+txt = "apple#banana#cherry#orange"
+
+x = txt.split("#")
+
+print(x)
+
+txt = "apple#banana#cherry#orange"
+
+# setting the maxsplit parameter to 1, will return a list with 2 elements!
+x = txt.split("#", 1)
+
+print(x)
+
+# basic exercise for counting vowels example:
+sentence = input("Enter the sentence")
+s=sentence.lower()
+count=0
+vowels=["a","e","i","o","u"]
+for i in s: # i will compare one by one element in for loop.for loop looks the count of elements and execute loop that many times.
+    if i in vowels:
+        count+=1
+
+print(count)
+
+num=int(input("Enter the input"))
+x=str(num)
+reverse=x
+if reverse==x[::-1]:
+    print(reverse,"is palindrome")
+else:
+    print(reverse, "is not palindrome")
+
+#programe to count character in strings:
+sente=input("Enter the character")
+count=0
+y=input("enter the char to count")
+for i in sente:
+        if i==y:
+           count+=1
+print(y,"is", count,"times")
+
+#Difference between continous string and splitted string:
+1.sentence="My", "prog", "is" ," python"  #This is considered as items in list so sentence[0]="My"
+
+print(len(sentence))
+
+This will print 4 ,as each string will be considered separately like cell and its like list as in excel since its splitted by comma.
+
+2.sentence="My prog is python" # This is considered as String,so sentence[0]="M"
+
+print(len(sentence))
+
+This will print 17 as ,the string will be treated as one single word or sentence in single cell and len will be counted of single strings
+
+#prog to remove duplicates from strings:
+
+s=input("Enter string")
+i=0
+s1=""
+for x in s:
+    if s.index(x)==i: # here in for loop x takes value as first index of letter in the string which are duplicated and hence comes out of the loop when similar letter is found.
+        s1+=x
+
+    i+=1
+print(s1)
+
+2.Method;
+
+import re
+
+stringA = 'dog cat mouse'
+stringB = 'rat'
+
+# Look if stringB is in stringA
+match = re.search(stringB, stringA)
+
+if not match:
+    print('No!')
+
+s=input("Enter the string")
+s1=s.split()
+a=[]
+i=0
+for str1 in s1:
+
+        if str1 not in a:
+          a.append(str1)
+
+print(a)
+
+
+ t="shenanigan"
+>>> print(type(t))
+<class 'str'>
+>>> t[0:1]
+'s'
+>>> t[0:2]
+'sh'
+>>> t[4:5]
+'a'
+>>> t[4:6]
+'an'
+>>> t[3:]
+'nanigan'
+>>> t[0:6]
+'shenan'
+>>> t[::]
+'shenanigan'
+>>> t[0::2]
+'seaia'
+>>> t[0::3]
+'snin'
+>>> a="Wabbite"
+>>> t[0:6]+a
+'shenanWabbite'
+>>> t[0::4]
+'saa'
+>>> t[-1:-4:-1]
+'nag'
+>>> 
+
+sta="an inferior lawyer with dubious practices"
+for w in sta.split():
+    print(w.capitalize(),end=" ")
+
+sta="an inferior lawyer with dubious practices"
+newsta=sta.replace("an","AN").replace("practices","Practices")
+print(newsta)
+
+
+str = "---geeksforgeeks---"
+  
+# using strip() to delete all '-' 
+print ( " String after stripping all '-' is : ", end="") 
+print ( str.strip('-') ) 
+  
+# using lstrip() to delete all trailing '-' 
+print ( " String after stripping all leading '-' is : ", end="") 
+print ( str.lstrip('-') ) 
+  
+# using rstrip() to delete all leading '-' 
+print ( " String after stripping all trailing '-' is : ", end="") 
+print ( str.rstrip('-') )
+
+s.replace(",","")
+'C:\\Users\\Kanetkar\\Documents'
+>>> s.partition("\\")
+('C:', '\\', 'Users\\Kanetkar\\Documents')
+>>> 
+
+ s1="Ault"
+>>> s2="Kelly"
+>>> s3=s1[1:2]+s2
+>>> s3
+'uKelly'
+>>> s3=s1[1:2]+s2+s1[3:]
+>>> s3
+'uKellyt'
+>>> s1="America"
+
+s=input("Enter the string")
+lower=[]
+upper=[]
+for x in s:
+    if x.islower()==True: # here in for loop x takes value as first index of letter in the string which are duplicated and hence comes out of the loop when similar letter is found.
+        lower.append(x)
+    else:
+        upper.append(x)
+s2="".join(lower + upper)
+print(s2)
+
+
+s=input("Enter the string")
+a=0
+n=0
+sp=0
+for c in s:
+    if c.isalpha():
+        a+=1
+    elif c.isdigit():
+        n+=1
+    else:
+        sp+=1
+
+print(a,n,sp)
+
+
+str1 = "Emma is a data scientist who knows Python. Emma works at google."
+print("Original String is:", str1)
+
+index = str1.rfind("Emma")
+print("Last occurrence of Emma starts at", index)
+
+
+str_list = ["Emma", "Jon", "", "Kelly", None, "Eric", ""]
+print("Original list of sting")
+print(str_list)
+
+# use built-in function filter to filter empty value
+new_str_list = list(filter(None, str_list))
+
+print("After removing empty strings")
+print(new_str_list)
+
+
+import string
+
+str1 = "/*Jon is @developer & musician"
+print("Original string is ", str1)
+
+# use translate function of a string
+# and maketrans function of str class
+new_str = str1.translate(str.maketrans('', '', string.punctuation))
+
+print("New string is ", new_str)

@@ -1,0 +1,76 @@
+hdfc password Diwali@2020
+
+def pp(num):
+ for i in range(2, num):
+           if (num % i) == 0:
+               break
+ else:
+             temp =num
+             rev=0
+             while(temp):
+               rev=rev*10+temp%10
+               temp=temp//10
+             if num==rev:
+               print(f"{num} is prime and palindrome")
+               
+    
+for num in range(100,200):
+    pp(num)
+
+
+def fun(a,b,c)   #a,b,c are formal arguments
+
+fun (10,20,30) # actual arguments
+
+There are four types of aguments;
+1.position arguments   order of arguments not important but arguments must be matched
+2.keyword arguments    order of arguments is important and has to enter in thst order only
+3.default arguments    def add(x,y)  ,but add(10) will give error,but add(x,y=0) for no error
+4.Variable lenth arguments   we don't how many arguments to pass ,incase we don;t we make variable lenght arguments
+def fun(*n)
+total=0
+for i in n:
+total=total+i
+print(total)
+
+fun(10)
+fun(10,20)
+fun(10,20,30)
+
+def fun(a,b,c)   These are positional arguments
+
+fun (10,20,30) 
+
+2 Keyword arguments;
+
+def fun(rollno,name)
+  print("f {roll no}
+  print(f" {name})
+
+when we call function and entered rollno=101,name="Rakesh" 
+fun("sumedh",100)  # positional arguments
+Rollsumedh and Name: 100
+>>> position arguments gets wrongs because of wring input 
+
+fun(rollno=101,name="Rakesh")
+fun(name="sachin",rollno=101)
+
+
+How to make own modules
+
+
+def calci(num1,num2,op):
+    result=0
+    if op=="+":
+        result=num1+num2
+    elif op=="-":
+        result=num1-num2
+    elif op=="*":
+        result=num1*num2
+    elif op=="/":
+        result=num1/num2
+
+    return result
+
+        
+

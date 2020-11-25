@@ -1,0 +1,413 @@
+Class Person:
+    def __init__(self,name,age): # here we have initialize the object
+        self.name=name
+        self.age=age
+    def showage(self):
+        print("Age of student",self.age)
+
+    def showname(self):
+        print("Name of Student",self.name)
+
+class Student(Person):
+    def __init__(self,marks,n,a):
+        self.marks=marks
+
+        super().__init__(n,a)
+    def student_data(self):          # here class has no contructor so by default it will take contructor from Parent Class
+
+        print(f'Student name {self.name} age {self.age} has got {self.marks} marks ')
+
+sumedh=Student(75,"Sumedh",23)
+donu=Student(75,"Donu",23)
+donu.showname()
+donu.showage()
+donu.student_data()
+
+2.class Bank:
+    def __init__(self,name,accountid):
+        self.name=name
+        self.accountid=accountid
+
+        print("Welcome to Bank")
+
+class Balance(Bank):
+    def __init__(self,n,acc,deposit):
+        self.deposit=deposit
+        super().__init__(n,acc,)
+
+    def show_bal(self,addamount):
+        self.addamount=addamount
+        self.balance=self.deposit+self.addamount
+        print(f'Name: {self.name} : Account_ID {self.accountid} Balance :',self.balance)
+
+    def withdrawl(self,withdrawl):
+        self.withdrawl=withdrawl
+        self.balance=self.balance-self.withdrawl
+        print(f'Name {self.name} : Account_ID {self.accountid} Balance :{self.balance} after withdrawl of',{self.withdrawl})
+
+ac1=Balance(n="Sarode",acc=78800,deposit=5800)
+ac1.show_bal(50000)
+ac1.withdrawl(10000)
+
+
+#More Clean Code:
+
+class Bank:
+    def __init__(self,name,accountid):
+        self.name=name
+        self.accountid=accountid
+
+        print("Welcome to Bank")
+
+class Balance(Bank):
+    def __init__(self,n,acc,deposit):
+        self.deposit=deposit
+        super().__init__(n,acc,)
+
+    def show_bal(self,addamount):
+        self.addamount=addamount
+        self.balance=self.deposit+self.addamount
+        print(f'Name: {self.name} : Account_ID {self.accountid} ')
+        print(f'Balance :',self.balance)
+
+    def withdrawl(self,withdrawl):
+        self.withdrawl=withdrawl
+        self.balance=self.balance-self.withdrawl
+        print(f'Withdrawl amount=',{self.withdrawl})
+        print(f'Balance after Withdrawl:',{self.balance})
+
+ac1=Balance(n="Sarode",acc=78800,deposit=1000)
+ac1.show_bal(5000)
+ac1.withdrawl(2000)
+
+
+class Vehicle:
+    def __init__(self,country):
+        self.country=country
+
+
+class Four_Wheeler(Vehicle):
+
+    def show_vehicle(self,model):
+        self.model=model
+        if self.country=="India":
+            self.price = 2000
+        else:
+            self.price = 5000
+        print(f'{self.model} Price:{self.price}')
+
+
+class two_Wheeler(Vehicle):
+
+    def show_vehicle(self, model):
+        self.model = model
+        if self.country=="India":
+            self.price = 1000
+        else:
+            self.price = 4000
+        print(f'{self.model} Price:{self.price}')
+
+c1=two_Wheeler(country="de")
+c1.show_vehicle("bajaj")
+
+#Prog to describe Super class and Name conflict for mSaurabh Dhukla
+class Base:
+    def __init__(self):
+        self.a=10
+
+    def showbase(self):
+        print("showbase a=",self.a)
+
+class Derived(Base):  # without super class ,Derived class does not call the Base call or does not inherit from Base Class
+    def __init__(self): #
+        self.a=20
+        print("Called Derived")
+    def showderived(self):
+        print("a=",self.a)
+
+d=Derived()
+d.showderived()
+d.showbase()
+
+#Constructor over riding in Python
+class Father:
+    def __init__(self):
+        self.money=5000
+        print("I am Father class Contructor")
+        print(self.money)
+
+    def father_show(self):
+        print("Father class Method")
+
+
+class Son(Father):
+    def son_show(self):
+        print("Son class Method")
+
+s1=Son() # When object is created for Son class without Son Class Instructor Father is called by default 
+s1.father_show()
+s1.son_show()
+Output:
+I am Father class Contructor
+5000
+Father class Method
+Son class Method
+5000
+
+Case II
+#Now in order to over ride the by default call of Father call contructor ,we need add our contructor in the son class
+
+class Father:
+    def __init__(self):
+        self.money=5000
+        print("I am Father class Contructor")
+        print(self.money)
+
+    def father_show(self):
+        print("Father class Method")
+
+
+class Son(Father):
+    def __init__(self): # Son class constructor defined ,on creating Son class object S1 ,it will call the son class contructor
+        self.money=10000
+        print("Son class constructor")
+    def son_show(self):
+        print("Son class Method")
+        print(self.money)
+
+s1=Son()
+s1.father_show()
+s1.son_show()
+
+Output:
+Son class constructor
+Father class Method
+Son class Method
+10000  # self.input value chnages to 10000 as Father class constructor is over rided or not called.
+
+Case III
+Accessing the Father or Base class by super method for accessing the variables of Father class;
+
+class Father:
+    def __init__(self):
+        self.money=5000
+        print("I am Father class Contructor")
+        print(self.money)
+
+    def father_show(self):
+        print("Father class Method")
+
+
+class Son(Father):
+    def __init__(self):
+        super().__init__()  # Super class fetches the value of Father class for Son Class.
+        self.money=10000
+        print("Son class constructor")
+    def son_show(self):
+        print("Son class Method")
+        print(self.money)
+
+s1=Son()
+
+#Case III with parameters:
+class Father:
+    def __init__(self,m):
+        self.money=m
+        print("I am Father class Contructor")
+        print(self.money)
+
+    def father_show(self):
+        print("Father class Method")
+
+
+class Son(Father):
+    def __init__(self,a):
+
+        super().__init__(a)
+        self.extramoney=10000
+        self.total_money=self.money+self.extramoney
+        print("Son class constructor")
+    def son_show(self):
+        print("Son class Method")
+        print(self.total_money)
+
+s1=Son(5000)
+s1.son_show()
+
+#Multilevel inheritance;
+
+class Father:
+    def show_father(self):
+        print("Father class")
+class Son(Father):
+    def show_son(self):
+        print("Class Son")
+
+class Grandson(Son):
+    def show_grandson(self):
+         print("Class Grandson")
+
+g=Grandson()
+g.show_son()
+g.show_father()
+g.show_grandson()
+
+Output Class Son
+Father class
+Class Grandson
+
+CaseII
+class Father:
+    def __init__(self):
+        print("Father class Constructor")
+    def show_father(self):
+        print("Father class")
+class Son(Father):
+    def __init__(self):
+        print("Son class Constructor")
+    def show_son(self):
+        print("Class Son")
+
+class Grandson(Son):
+    def __init__(self):
+        print("Grandson class Constructor")
+    def show_grandson(self):
+         print("Class Grandson")
+
+g=Grandson() # This object will call only its class constructor
+g.show_son()
+g.show_father()
+g.show_grandson()
+
+Output:
+Grandson class Constructor  This object will call only its class constructor
+Class Son
+Father class
+Class Grandson
+
+#Multilevel Inheritance with Super class:
+
+class Father:
+    def __init__(self):
+        self.property="1 bhk House"
+
+    def show_father(self):
+        print(self.property)
+class Son(Father):
+    def __init__(self):
+        super().__init__()
+        self.propertyson=self.property+ " " +  "and " + "2 bhk House"
+
+    def show_son(self):
+        print(self.propertyson)
+
+class Grandson(Son):
+    def __init__(self):
+        super().__init__()
+        self.propertygrandson=self.propertyson + "and " + "and" + "BUnglow"
+    def show_grandson(self):
+         print(self.propertygrandson)
+
+g=Grandson() # This object will call only its class constructor
+
+g.show_father()
+g.show_son()
+g.show_grandson()
+
+Output:
+father had 1 bhk House
+ 	Son has got 1 bhk House and 2 bhk House
+   		Grandson got 1 bhk House and 2 bhk Houseand  Bunglow
+
+
+#Multiple Inheritance (with out constructor )
+class Father:
+    def show_f(self):
+        print("Faather Class")
+
+class Mother:
+    def show_m(self):
+        print("Mother class")
+
+class Son(Father,Mother): Multiple inherits in one class 
+    def show_s(self):
+        print("Son class")
+
+s=Son()
+s.show_f()
+s.show_m()
+s.show_s()
+
+Faather Class
+Mother class
+Son class
+
+#Multiple inheritance with constructor:
+class Father:
+    def __init__(self):
+        self.color="fair"
+
+class Mother:
+    def __init__(self):
+        Father.__init__(self)
+        self.hair="black"
+
+class Son(Father,Mother):
+    def __init__(self):
+        Mother.__init__(self)
+        self.height="good"
+    def show_s(self):
+        print(f"Son has got {self.color} complexion from Father\n{self.hair} hair and {self.height} height from Mother class")
+
+s=Son()
+
+s.show_s()
+Ouput;
+Son has got fair complexion from Father
+black hair and good height from Mother class
+
+#Multiple Inheritance wit hSuper()
+class Father:
+    def __init__(self):
+        super().__init__()
+        self.color="fair"
+
+class Mother:
+    def __init__(self):
+        super().__init__()
+        self.hair="black"
+
+class Son(Father,Mother):
+    def __init__(self):
+        super().__init__()
+        self.height="good"
+    def show_s(self):
+        print(f"Son has got {self.color} complexion from Father\n{self.hair} hair and {self.height} height from Mother class")
+
+s=Son()
+
+s.show_s()
+
+#Polyphorism
+
+class Dog:
+     def speak(self):
+         print("Dog Bark")
+
+class Cat:
+    def speak(self):
+        print("Cat meow")
+
+class Horse:
+    def speak(self):
+        print("Horse tiktok")
+
+def action(obj):
+    obj.speak()
+
+d=Dog()
+action(d)
+c=Cat()
+action(c)
+h=Horse()
+action(h)

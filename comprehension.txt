@@ -1,0 +1,9 @@
+movies=[("Gandhi",2002),("Gandh",2005),("Gand",2000),("andhi",1990),("Gadhi",2007),("dhi",1999),("Ghi",2008),("Gandi",2009),("Gahi",2099)]
+'''gmovies=[]
+for titles in movies:
+    if titles.startswith("G"):
+        gmovies.append(titles)
+print(gmovies)'''
+
+gmovies=[titles for (titles,year) in movies if  year>2005]
+print(gmovies)
